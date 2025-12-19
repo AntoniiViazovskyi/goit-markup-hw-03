@@ -2,10 +2,37 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #ffffff;
   color: #434455;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-ul {
+main {
+  flex-grow: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 a {
@@ -15,6 +42,23 @@ a {
 .link-active-underline:active {
   color: #404bbf;
   text-decoration: underline;
+}
+
+.container {
+  max-width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  border-bottom: 1px solid #e7e9fc;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
 }
 
 h2,
@@ -29,6 +73,11 @@ h3 {
   line-height: 1.16667;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+
+.header .text-logo {
+  margin-right: 76px;
+  padding: 24px 0;
 }
 
 .text-logo-customization {
@@ -46,16 +95,38 @@ h3 {
   color: #2e2f42;
 }
 
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.nav-list-link {
+  display: block;
+  padding: 24px 0;
+}
+
 .header-address {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   font-style: normal;
+  margin-left: auto;
 }
 
 .header-address a {
   color: #434455;
+}
+
+.address-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.address-list-link {
+  display: block;
+  padding: 24px 0;
 }
 
 a:hover,
@@ -65,6 +136,7 @@ a:focus {
 
 .hero-section {
   background-color: #2e2f42;
+  padding: 188px 0;
 }
 
 .hero-section-header {
@@ -74,6 +146,8 @@ a:focus {
   letter-spacing: 0.02em;
   text-align: center;
   color: #ffffff;
+  max-width: 496px;
+  margin: 0 auto 48px;
 }
 
 .hero-btn {
@@ -84,6 +158,12 @@ a:focus {
   letter-spacing: 0.04em;
   background-color: #4d5ae5;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  min-width: 169px;
+  height: 56px;
+  border: none;
 }
 
 .hero-btn:hover,
@@ -91,11 +171,39 @@ a:focus {
   background-color: #404bbf;
 }
 
+.features-section {
+  padding: 120px 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.features-list {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.features-list-item {
+  flex-basis: calc((100% - 72px) / 4);
+}
+
 .features-item-header {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
+  margin-bottom: 8px;
 }
 
 .features-item-paragraph {
@@ -107,9 +215,29 @@ a:focus {
 
 .team-section {
   background-color: #f4f4fd;
+  padding: 120px 0;
 }
+
+.team-list {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.team-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px 16px;
+}
+
 .team-list-item {
   background-color: #fff;
+  flex-basis: calc((100% - 72px) / 4);
+  border-radius: 0 0 4px 4px;
+  overflow: hidden;
 }
 
 .team-section-header {
@@ -118,6 +246,7 @@ a:focus {
   line-height: 1.11111;
   letter-spacing: 0.02em;
   text-align: center;
+  margin-bottom: 72px;
 }
 
 .team-item-header {
@@ -136,12 +265,39 @@ a:focus {
   text-align: center;
 }
 
+.portfolio-section {
+  padding: 120px 0;
+}
+
 .portfolio-section-header {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11111;
   letter-spacing: 0.02em;
   text-align: center;
+  margin-bottom: 72px;
+}
+
+.portfolio-list {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 48px 24px;
+}
+
+.portfolio-list-item {
+  flex-basis: calc((100% - 72px) / 3);
+  overflow: hidden;
+}
+
+.portfolio-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px 16px;
+  border-bottom: 1px solid #e7e9fc;
+  border-left: 1px solid #e7e9fc;
+  border-right: 1px solid #e7e9fc;
 }
 
 .portfolio-list-header {
@@ -160,6 +316,18 @@ a:focus {
 
 .footer {
   background-color: #2e2f42;
+  padding: 100px 0;
+}
+
+.footer-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: start;
+}
+.footer-logo {
+  display: inline-block;
+  max-width: 115px;
 }
 
 .footer-text-color {
@@ -171,4 +339,5 @@ a:focus {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  max-width: 264px;
 }
